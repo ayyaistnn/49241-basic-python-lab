@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio - อภิชญา สินสวาท</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Prompt", sans-serif;
+      background: linear-gradient(to right, #f6c9c9, #e6a1a1);
+      color: #4d0000;
+      padding: 40px;
+    }
+
+    .header {
+      text-align: center;
+      font-size: 80px;
+      font-weight: bold;
+      text-transform: lowercase;
+      color: #660000;
+      margin-bottom: 30px;
+     .stalinist-one-regular {
+      font-family: "Stalinist One", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+}
+
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .column {
+      width: 48%;
+    }
+
+    h2 {
+      margin-top: 20px;
+      color: #330000;
+      border-bottom: 2px solid #993333;
+      padding-bottom: 5px;
+    }
+
+    p {
+      margin: 5px 0;
+    }
+
+    .photo {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .photo img {
+      width: 250px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    @media (max-width: 768px) {
+      .column {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">portfolio</div>
+
+  <div class="container">
+
+    <div class="column">
+      <h2>ประวัติส่วนตัว</h2>
+      <p><strong>ชื่อ - สกุล:</strong> อภิชญา สินสวาท</p>
+      <p><strong>ชื่อเล่น:</strong> น้ำฟ้า</p>
+      <p><strong>วัน-เดือน-ปีเกิด:</strong> 3 ก.ค. 2552</p>
+      <p><strong>อายุ:</strong> 14 ปี</p>
+      <p><strong>สัญชาติ:</strong> ไทย</p>
+      <p><strong>เชื้อชาติ:</strong> ไทย</p>
+      <p><strong>ศาสนา:</strong> พุทธ</p>
+
+      <h2>อนุบาล</h2>
+      <p>โรงเรียนอนุบาลดรุณนิมิตวิทยา</p>
+
+      <h2>ประสบการณ์</h2>
+      <p>บพเพลิงวิทยาศาสตร์ (ภาคปกติ)</p>
+      <p>บพเพลิงวิทยาศาสตร์ (Gifted)</p>
+    </div>
+
+    <div class="column">
+      <h2>ข้อมูลผู้ปกครอง</h2>
+      <p><strong>มารดา:</strong> นาง สลีลา สินสวาท</p>
+      <p><strong>อาชีพ:</strong> ทนายความ</p>
+      <p><strong>โทร:</strong> 089-199-9109</p>
+      <br>
+      <p><strong>บิดา:</strong> ร.ต.อ. ตรัง สินสวาท</p>
+      <p><strong>อาชีพ:</strong> รับราชการ</p>
+      <p><strong>โทร:</strong> 084-100-9191</p>
+
+      <h2>ข้อมูลการติดต่อ</h2>
+      <p><strong>โทร:</strong> 095-675-3409</p>
+      <p><strong>อีเมล:</strong> apichayasinsawat@gmail.com</p>
+      <p><strong>ที่อยู่:</strong><br>
+         113/147 หมู่บ้านกาญจนกนกวิลล์ 4 หมู่ 12 ซ.15<br>
+         ต.สันกำแพง อ.สันกำแพง<br>
+         จ.เชียงใหม่ 50130
+      </p>
+
+      <div class="photo">
+        <img src="https://img5.pic.in.th/file/secure-sv1/Screenshot-2025-05-31-142058.png"
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ตารางสินค้า</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background-color: #f3f3f3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+        img {
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>รายการสินค้า</h1>
+    <table>
+        <tr>
+            <th>รูปสินค้า</th>
+            <th>ชื่อสินค้า</th>
+            <th>ราคา</th>
+            <th>จำนวน</th>
+            <th>Email</th>
+        </tr>
+        {% for p in products %}
+        <tr>
+            <td><img src="{{ p.image }}" alt="img"></td>
+            <td>{{ p.name }}</td>
+            <td>{{ p.price }}</td>
+            <td>{{ p.quantity }}</td>
+            <td>{{ p.email }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ตารางสินค้า</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background-color: #f3f3f3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+        img {
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+ <!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ตารางสินค้าแนวตั้ง</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background-color: white;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        img {
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>รายการสินค้า</h2>
+
+    <table>
+        <tr>
+            <th>รูปภาพ</th>
+            <th>ชื่อสินค้า</th>
+            <th>ราคา</th>
+            <th>จำนวน</th>
+            <th>อีเมล</th>
+        </tr>
+        <tr>
+            <td><img src="https://via.placeholder.com/60" alt="สินค้า1"></td>
+            <td>สินค้า A</td>
+            <td>100</td>
+            <td>5</td>
+            <td>a@example.com</td>
+        </tr>
+        <tr>
+            <td><img src="https://via.placeholder.com/60" alt="สินค้า2"></td>
+            <td>สินค้า B</td>
+            <td>200</td>
+            <td>3</td>
+            <td>b@example.com</td>
+        </tr>
+        <tr>
+            <td><img src="https://via.placeholder.com/60" alt="สินค้า3"></td>
+            <td>สินค้า C</td>
+            <td>150</td>
+            <td>8</td>
+            <td>c@example.com</td>
+        </tr>
+        <tr>
+            <td><img src="https://via.placeholder.com/60" alt="สินค้า4"></td>
+            <td>สินค้า D</td>
+            <td>250</td>
+            <td>2</td>
+            <td>d@example.com</td>
+        </tr>
+        <tr>
+            <td><img src="https://via.placeholder.com/60" alt="สินค้า5"></td>
+            <td>สินค้า E</td>
+            <td>300</td>
+            <td>1</td>
+            <td>e@example.com</td>
+        </tr>
+    </table>
+
+</body>
+</html>
